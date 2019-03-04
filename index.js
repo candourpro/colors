@@ -1,8 +1,8 @@
 import _ from 'lodash'
 
-export default {
-  match: ({ colors }, value, key) => (
+export default (colors) => ({
+  match: (_theme, value, key) => (
     colors && value && key.match(/color|fill/i) && _.has(colors, value)
   ),
-  value: ({ colors }, value) => colors[value],
-}
+  value: (_theme, value) => colors[value],
+})
